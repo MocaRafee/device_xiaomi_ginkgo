@@ -14,13 +14,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, device/xiaomi/ginkgo/device.mk)
 
 # ANXCamera
-$(call inherit-product, vendor/ANXCamera/config.mk)
+$(call inherit-product, vendor/aeonax/ANXCamera/anx-vendor.mk)
 
-# Inherit some common ColtOS stuff.
-$(call inherit-product, vendor/colt/config/common_full_phone.mk)
+# Inherit some common ZenX-OS stuff.
+$(call inherit-product, vendor/zenx/config/common_full_phone.mk)
+PRODUCT_PACKAGES += \
+    GalleryGoPrebuilt
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := colt_ginkgo
+PRODUCT_NAME := zenx_ginkgo
 PRODUCT_DEVICE := ginkgo
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 8
@@ -28,7 +30,3 @@ PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-# ColtOS stuffs
-TARGET_BOOT_ANIMATION_RES := 1080x2340
-COLT_BUILD_TYPE := Official
-COLT_DEVICE_MAINTAINER := mg712702
